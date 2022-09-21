@@ -1,0 +1,11 @@
+#!/bin/bash
+IFS=$'\n'
+file=urls.txt
+lines=$(cat ${file})
+for line in ${lines}; do
+   echo "${line}"
+   curl -I --silent "${line}" | grep -E 'server|cache'
+   echo " "
+done
+IFS=""
+exit ${?}
